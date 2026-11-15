@@ -1,0 +1,7 @@
+export function Icon({ name, size = 20, ...props }) {
+ const common = { width:size, height:size, viewBox:'0 0 24 24', fill:'none', stroke:'currentColor', strokeWidth:1.8, strokeLinecap:'round', strokeLinejoin:'round', ...props };
+ const paths = {
+  bag:<><path d="M5 8h14l1 13H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></>, cart:<><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2 3h2l2.5 12.5a2 2 0 0 0 2 1.5h9.7a2 2 0 0 0 2-1.6L22 8H5"/></>, search:<><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></>, heart:<path d="M20.8 8.8c0 5.1-8.8 10-8.8 10s-8.8-4.9-8.8-10A4.8 4.8 0 0 1 12 6.4a4.8 4.8 0 0 1 8.8 2.4Z"/>, arrow:<><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></>, truck:<><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7z"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="18" cy="19" r="1.5"/></>, shield:<><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></>, return:<><path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-2"/></>, headset:<><path d="M3 13v-2a9 9 0 0 1 18 0v2"/><path d="M3 13h4v7H5a2 2 0 0 1-2-2v-5ZM21 13h-4v7h2a2 2 0 0 0 2-2v-5Z"/></>, menu:<><path d="M4 7h16M4 12h16M4 17h16"/></>, close:<path d="m6 6 12 12M18 6 6 18"/>, plus:<path d="M12 5v14M5 12h14"/>, minus:<path d="M5 12h14"/>, play:<path d="m8 5 12 7-12 7V5Z"/>, star:<path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 6.9L12 17.5l-6.2 3.5 1.4-6.9L2 9.3l7-.8L12 2Z"/>, mail:<><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></>
+ };
+ return <svg {...common} aria-hidden="true">{paths[name] || paths.bag}</svg>;
+}
